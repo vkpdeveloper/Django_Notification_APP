@@ -3,7 +3,7 @@ from .models import *
 
 def index(request):
     data = Post.objects.all().order_by('-id')
-    return render(request, 'index.html', {'data':data})
+    return render(request, 'notification/index.html', {'data':data})
 
 def contact(request):
     if request.method == 'POST':

@@ -1,0 +1,29 @@
+{% extends 'basic.html'%}
+{% block title %}Home{% endblock %}
+{% load static %}
+
+  {% block body %}
+
+    <!-- main section start -->
+    <div class="container jumbotron ">
+
+      {% if data %}
+        {% for detail in data %}
+          <center>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title "><span class="float-left text-uppercase"><strong>{{ detail.title }}</strong></span> <span class="float-right" style="font-size: 0.6em;">{{ detail.tdate }}</span></p><br/>
+              <p class="card-text text-justify"><i>{{ detail.desc }}</i></p>
+              {% if detail.pic %}
+                <div><img src="{{detail.pic.url}}" class="img-fluid"></div>
+              </div>
+            </div>
+            <br/>
+            </center>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <!-- main section end -->
+
+    {% endblock %}

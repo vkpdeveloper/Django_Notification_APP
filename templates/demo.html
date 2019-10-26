@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DEMO</title>
+</head>
+<body>
+	{% if emaildata %}
+        {% for detail in emaildata %}
+			<p>{{ detail.user_email }}</p>
+
+      {% endfor %}
+      {% endif %}
+</body>
+</html>
